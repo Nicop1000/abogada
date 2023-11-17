@@ -19,7 +19,7 @@ const testimonios = [
     id: "2",
     imag: "./gise1.jpg",
     descriptions: "Abogada de lujo, fue muy expeditiva, profesional y meticulosa con mi defensa. Muy agradecido.",
-    nombre: "Adolfo Chaparro",
+    nombre: "Miguel García",
     area: "Derecho Laboral",
   },
 
