@@ -77,7 +77,7 @@ export default function Descriptions() {
                     className="text-lg font-mont">
                   Me llamo Gisela Karina Brusaferri, vivo en la ciudad de Lomas de Zamora, soy egresada de la Universidad de Buenos Aires, Facultad de Derecho UBA en el año 2017.
                   Comencé mis inicios trabajando en diversos estudios jurídicos, desempeñándome en  las distintas ramas del derecho.
-                  Actualmente, me desempeño como abogada independiente, ejerciendo mi profesión en las distintas jurisdicciones del país, Ciudad de Buenos Aires - Capital federal, provincia de Buenos Aires y la justicia Federal.
+                  Actualmente, me desempeño como abogada independiente, ejerciendo mi profesión en las distintas jurisdicciones del país, Ciudad de Buenos Aires - Capital federal, Provincia de Buenos Aires y la Justicia Federal.
 
                 </motion.p >
                 <motion.p
@@ -105,7 +105,7 @@ export default function Descriptions() {
                  visible: { opacity: 1, y: 0 },
                }}
                     className="text-base font-mont leading-7">
-                  Me caracterizo por ser una profesional empática y con una gran capacidad de escucha, la cual me permite colocarme en el lugar de los clientes para poder comprender la situación vivida y en base a su asoría legal tratar de obtener la mejor estrategia para el caso en concreto. Soy tu abogada de confianza!
+                  Me caracterizo por ser una profesional empática y con una gran capacidad de escucha, la cual me permite colocarme en el lugar de los clientes, para poder comprender la situación vivida y en base a mis conocimientos jurídicos planificar la mejor estrategia para el caso en concreto. Soy tu abogada de confianza!
                 </motion.p>
               </div>
             </div>

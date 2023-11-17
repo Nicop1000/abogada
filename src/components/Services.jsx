@@ -7,13 +7,13 @@ const features = [
   {
     name: 'Servicios jurídicos',
     description:
-      'asesoramiento y acompañamiento en las distintas ramas del derecho: laboral, art, accidentes de tránsito, divorcios, sucesiones, penal, jubilaciones y familia.',
+      'Asesoramiento y acompañamiento en las distintas ramas del derecho: laboral, ART, accidentes de tránsito, divorcios, sucesiones, Derecho Penal, jubilaciones y familia.',
     icon: ImHammer2,
   },
   {
     name: 'Asesoría',
     description:
-      'Servicios de acompañamiento y asesoría  juridica en las distintas comisiones médicas de la súper intendencia de riesgo de trabajo frente a enfermedades profesionales, accidentes laborales e initinere que sufra el trabajador.',
+      'Servicios de acompañamiento y asesoría  juridica en las distintas comisiones médicas de la Súper Intendencia de riesgo de trabajo frente a enfermedades profesionales, accidentes laborales e initinere que sufra el trabajador.',
     icon: FaHandsHelping,
   },
   {

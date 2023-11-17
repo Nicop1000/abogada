@@ -44,7 +44,7 @@ export default class SimpleSlider extends Component {
       <div id="test">
             <div className="grid">
                 <h3 className="font-bold text-center text-4xl text-pink-900 mt-20 pt-2">Testimonios</h3>
-                <p className="font-semibold text-center p-4 text-pink-600 text-2xl">Palabras inspiradoras de los clientes muy satisfechos.</p>
+                <p className="font-semibold text-center p-4 text-pink-600 text-2xl">Palabras inspiradoras de clientes satisfechos.</p>
             </div>
         <Slider {...settings}>
         {testimonios && testimonios.map((testimonio) => (

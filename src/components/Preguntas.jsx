@@ -4,7 +4,7 @@ const posts = [
       href: '#',
       category: { name: 'Article', href: '#', color: 'bg-indigo-100 text-indigo-800' },
       description:
-        'Si sufriste un accidente laboral, tenés hasta dos años para iniciar el reclamo.',
+        'Si sufriste un accidente laboral, tenés hasta dos años para iniciar el reclamo correspondiente.',
       date: 'Mar 16, 2020',
       datetime: '2020-03-16',
       author: {
@@ -20,7 +20,7 @@ const posts = [
       href: '#',
       category: { name: 'Video', href: '#', color: 'bg-pink-100 text-pink-800' },
       description:
-        'No es nescesario que tu pareja esté de acuerdo para iniciarlo, ni tampoco hay que expresar los motivos.',
+        'No es necesario que tu pareja esté de acuerdo para iniciar los trámites de divorcio, tampoco es fundamental expresar los motivos por los cuales quieres hacerlo.',
       date: 'Mar 10, 2020',
       datetime: '2020-03-10',
       author: {
@@ -35,7 +35,7 @@ const posts = [
       title: 'Derecho laboral',
       href: '#',
       category: { name: 'Case Study', href: '#', color: 'bg-green-100 text-green-800' },
-      description: 'Si trabajas en negro (no registrado) podés intimar a tu empleador por telegrama para solicitar el registro.',
+      description: 'Trabajas en negro, de manera no formal, podés intimar a tu empleador por telegrama para solicitar el correspondiente registro.',
       date: 'Feb 12, 2020',
       datetime: '2020-02-12',
       author: {

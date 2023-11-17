@@ -20,15 +20,15 @@ const posts = [
     },
   },
   {
-    title: 'Seguros',
+    title: 'Sucesiones',
     href: '#',
     category: { name: 'Video', href: '#' },
     description:
-      'Asesoramiento, representación y defensa en caso de siniestros, tanto en la etapa de la mediación previa, como en la etapa judicial.',
+      'Realizamos entrevistas personalizadas para explicarte de manera sencilla las etapas del proceso.',
     date: 'Mar 10, 2020',
     datetime: '2020-03-10',
     imageUrl:
-      './seguros.jpg',
+      './suce.jpg',
     readingTime: '4 min',
     author: {
       name: 'Brenna Goyette',
