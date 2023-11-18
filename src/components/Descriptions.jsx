@@ -53,20 +53,20 @@ export default function Descriptions() {
             {/* Content area */}
             <div className="pt-12 sm:pt-16 lg:pt-20">
               <motion.h2
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ onde: true, amount: 0 }}
-              transition={{ delay: 0, duration: 1 }}
-              variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              className="text-4xl font-bold font-mont tracking-tight text-gray-900 sm:text-4xl">
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ onde: true, amount: 0 }}
+                transition={{ delay: 0, duration: 1 }}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                className="text-4xl font-bold font-mont tracking-tight text-gray-900 sm:text-4xl">
                 ABOGADA
               </motion.h2>
               <div className="mt-6 space-y-6 text-gray-500">
                 <motion.p
-                initial="hidden"
+                  initial="hidden"
                   whileInView="visible"
                   viewport={{ onde: true, amount: 0 }}
                   transition={{ delay: .5, duration: 1 }}
@@ -74,14 +74,14 @@ export default function Descriptions() {
                     hidden: { opacity: 0, y: 50 },
                     visible: { opacity: 1, y: 0 },
                   }}
-                    className="text-lg font-mont">
+                  className="text-lg font-mont">
                   Me llamo Gisela Karina Brusaferri, vivo en la ciudad de Lomas de Zamora, soy egresada de la Universidad de Buenos Aires, Facultad de Derecho UBA en el año 2017.
                   Comencé mis inicios trabajando en diversos estudios jurídicos, desempeñándome en  las distintas ramas del derecho.
                   Actualmente, me desempeño como abogada independiente, ejerciendo mi profesión en las distintas jurisdicciones del país, Ciudad de Buenos Aires - Capital federal, Provincia de Buenos Aires y la Justicia Federal.
 
                 </motion.p >
                 <motion.p
-                initial="hidden"
+                  initial="hidden"
                   whileInView="visible"
                   viewport={{ onde: true, amount: 0 }}
                   transition={{ delay: 1, duration: 1 }}
@@ -89,23 +89,24 @@ export default function Descriptions() {
                     hidden: { opacity: 0, y: 50 },
                     visible: { opacity: 1, y: 0 },
                   }}
-                    className="text-base font-mont leading-7">
+                  className="text-base font-mont leading-7">
                   Apasionada del derecho, cuento con un equipo de abogados externos, los cuales desempeñan sus labores con total eficacia.
-                  Desempeño mis labores, en el ámbito de derecho laboral, derecho de familia, derecho civil, con gran trayectoria y experiencia en accidentes laborales y accidentes de tránsito, sucesiones y divorcios.
-                  Respecto del derecho penal cuento con colegas asociados de gran desempeño en ésta rama particular.
-                  Además, dispongo de un gran equipo interdisciplinario para poder evaluar, contener y ayudar a resolver tus problemas de manera integral con el apoyo de profesionales psicólogos, psicopedagogos, escribanos y peritos médicos los cuales se ajustan las pretensiones del caso en concreto.
+                  Especialista en Derecho Laboral, Derecho Civil, Sucesiones y Divorcios.
+                  Con una gran trayectoria y experiencia en accidentes laborales y accidentes de tránsito.
+                  En el ámbito del Derecho Penal, cuento con profesionales idóneos en la materia.
+                  En la búsqueda de brindar el asesoramiento acorde a las necesidades de mis clientes, cuento con un equipo interdisciplinario, compuesto por diferentes profesionales de otras disciplinas: psicólogos, psicopedagogos, escribanos y peritos médicos, quienes a través del trabajo en equipo brindan sus servicios, para obtener fundamentalmente resultados favorables de acuerdo a la problemática que se plantea en cada caso en concreto.
                 </motion.p>
                 <motion.p
-               initial="hidden"
-               whileInView="visible"
-               viewport={{ onde: true, amount: 0 }}
-               transition={{ delay: 1.5, duration: 1 }}
-               variants={{
-                 hidden: { opacity: 0, y: 50 },
-                 visible: { opacity: 1, y: 0 },
-               }}
-                    className="text-base font-mont leading-7">
-                  Me caracterizo por ser una profesional empática y con una gran capacidad de escucha, la cual me permite colocarme en el lugar de los clientes, para poder comprender la situación vivida y en base a mis conocimientos jurídicos planificar la mejor estrategia para el caso en concreto. Soy tu abogada de confianza!
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ onde: true, amount: 0 }}
+                  transition={{ delay: 1.5, duration: 1 }}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  className="text-base font-mont leading-7">
+                  Me caracterizo por ser una profesional empática y con una gran capacidad de escucha, la cual me permite colocarme en el lugar de mis clientes, para poder comprender la situación vivida y en base a mis conocimientos jurídicos planificar la mejor estrategia para el caso en concreto. Soy tu abogada de confianza!
                 </motion.p>
               </div>
             </div>

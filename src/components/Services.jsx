@@ -13,19 +13,19 @@ const features = [
   {
     name: 'Asesoría',
     description:
-      'Servicios de acompañamiento y asesoría  juridica en las distintas comisiones médicas de la Súper Intendencia de riesgo de trabajo frente a enfermedades profesionales, accidentes laborales e initinere que sufra el trabajador.',
+      'Acompañamiento y asesoría jurídica en las distintas comisiones médicas de la Superintendencia de Riesgo de Trabajo, cuando el trabajador haya sufrido un accidente trabajando, yendo o viniendo del mismo o bien ante el padecimiento de enfermedades profesionales.',
     icon: FaHandsHelping,
   },
   {
     name: 'Peritos',
     description:
-      'Médicos, psicológicos y escribanos, que conjuntamente con trabajo en equipo aportan lo más beneficioso para la resolución de los casos.',
+      'Médicos, psicólogos y escribanos de confianza quienes que de manera conjunta aportan a través del trabajo en equipo su experiencia, para la resolución de los casos.',
     icon: BsSearch,
   },
   {
     name: 'Gestoría',
     description:
-      'Búsqueda de distintos documentos, partidas de nacimiento, defunción y matrimonio etc.',
+      'Búsqueda, tramitación y pedido de distintos documentos en diferentes organismos y entidades públicas o privadas. (Partidas, certificados, actas, etc.).',
     icon: BsFillClipboard2CheckFill,
   },
 ]

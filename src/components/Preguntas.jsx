@@ -20,7 +20,7 @@ const posts = [
       href: '#',
       category: { name: 'Video', href: '#', color: 'bg-pink-100 text-pink-800' },
       description:
-        'No es necesario que tu pareja esté de acuerdo para iniciar los trámites de divorcio, tampoco es fundamental expresar los motivos por los cuales quieres hacerlo.',
+        'No es necesario que tu pareja esté de acuerdo para poder iniciar los trámites del mismo, tampoco es un requisito expresar los motivos por los cuales quieres hacerlo',
       date: 'Mar 10, 2020',
       datetime: '2020-03-10',
       author: {
@@ -35,7 +35,7 @@ const posts = [
       title: 'Derecho laboral',
       href: '#',
       category: { name: 'Case Study', href: '#', color: 'bg-green-100 text-green-800' },
-      description: 'Trabajas en negro, de manera no formal, podés intimar a tu empleador por telegrama para solicitar el correspondiente registro.',
+      description: 'Si trabajas en negro, de manera informal, podés intimar a tu empleador a través de un telegrama laboral, para solicitar el correspondiente registro.',
       date: 'Feb 12, 2020',
       datetime: '2020-02-12',
       author: {
@@ -50,7 +50,7 @@ const posts = [
       title: 'Accidente de tránsito',
       href: '#',
       category: { name: 'Case Study', href: '#', color: 'bg-green-100 text-green-800' },
-      description: 'Es importante asesorarse, Es importante contar con el asesoramiento adecuado para poder reclamar los daños materiales y las lesiones sufridas.',
+      description: 'Si sufriste daños materiales en tu vehículo y/o lesiones físicas, es importante asesorarse con un profesional en la materia, para lograr una justa composición de tus derechos e intereses.',
       date: 'Feb 12, 2020',
       datetime: '2020-02-12',
       author: {
