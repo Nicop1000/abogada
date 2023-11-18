@@ -19,7 +19,7 @@ const features = [
   {
     name: 'Peritos',
     description:
-      'Médicos, psicólogos y escribanos de confianza quienes que de manera conjunta aportan a través del trabajo en equipo su experiencia, para la resolución de los casos.',
+      'Médicos, psicólogos y escribanos de confianza quienes de manera conjunta aportan a través del trabajo en equipo su experiencia, para la resolución de los casos.',
     icon: BsSearch,
   },
   {
