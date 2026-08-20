@@ -9,6 +9,7 @@ import Example from './Preguntas'
 import Carrusel from './Carrusel'
 import Telef from './Telef'
 import Footer from './Footer'
+import WhatsAppFlotante from './WhatsAppFlotante'
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Example />
       <Telef />
       <Footer />
+      <WhatsAppFlotante />
     </div>
   )
 }

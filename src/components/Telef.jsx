@@ -1,5 +1,5 @@
 import React from 'react'
-import WhatsApp from './WhathApp'
+
 import './Frame.css'
 import { motion } from 'framer-motion';
 
