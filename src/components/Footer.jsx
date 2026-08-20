@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Element, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 export default function Footer() {
   return (
@@ -36,6 +36,7 @@ export default function Footer() {
                 href="https://www.facebook.com/"
                 className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-lg transition-colors"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
@@ -48,6 +49,7 @@ export default function Footer() {
                 href="https://www.instagram.com/dra.brusaferri/"
                 className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-lg transition-colors"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
@@ -60,6 +62,7 @@ export default function Footer() {
                 href="https://twitter.com/"
                 className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-lg transition-colors"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img
                   src="https://cdn-icons-png.flaticon.com/512/1384/1384065.png"
@@ -135,7 +138,7 @@ export default function Footer() {
         <hr className="my-4" />
         <div className="flex flex-col xl:flex-row gap-4 items-center justify-between">
           <p className="text-gray-800 text-center md:text-left">
-            &copy; 2023 
+          &copy; {new Date().getFullYear()}
             <span className="text-gray-900 font-bold"> Dra. GKB</span> Todos
             los derechos reservados.
           </p>

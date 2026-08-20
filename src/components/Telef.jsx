@@ -39,7 +39,7 @@ export default function Telef() {
           <div className=' animate-example rounded-full mt-8'>
             <div className="bottom-5 right-6">
               <a           
-              href="https://wa.me/541140884332?text=Quiero%20realizar%20una%20consulta" target="_blank"
+              href="https://wa.me/541140884332?text=Quiero%20realizar%20una%20consulta" target="_blank" rel="noreferrer"
                 >
                 <img src="whatsAppIcono.png" alt=""
                   className="lg:w-12 w-8" />

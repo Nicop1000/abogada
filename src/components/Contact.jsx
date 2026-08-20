@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion, progress } from 'framer-motion'
+import { motion } from 'framer-motion'
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 
