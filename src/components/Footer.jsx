@@ -143,19 +143,23 @@ export default function Footer() {
             los derechos reservados.
           </p>
           <div className="flex flex-col md:flex-row items-center gap-2">
-            <a
-              href="#"
-              className="text-gray-700 hover:text-gray-900 transition-colors"
-            >
-              Terminos y condiciones
-            </a>
+            <button
+  type="button"
+  className="text-gray-700 hover:text-gray-900 transition-colors"
+>
+  Términos y condiciones
+</button>
+
+<span className="hidden md:flex">|</span>
+
+<button
+  type="button"
+  className="text-gray-700 hover:text-gray-900 transition-colors"
+>
+  Política de privacidad
+</button>
             <span className="hidden md:flex">|</span>
-            <a
-              href="#"
-              className="text-gray-700 hover:text-gray-900 transition-colors"
-            >
-              Política de privacidad
-            </a>
+            
           </div>
         </div>
       </div>
