@@ -11,7 +11,7 @@ const posts = [
     title: 'Sucesiones',
     description:
       'Te acompañamos durante todo el proceso sucesorio, explicándote cada etapa de manera clara y personalizada.',
-    imageUrl: './suce.jpg',
+    imageUrl: './Sucesiones.webp',
   },
   {
     title: 'Derecho laboral',
