@@ -1,353 +1,294 @@
-import { Fragment } from 'react'
-import { useState, useEffect } from 'react'
-import { Link } from 'react-scroll';
-import { Popover, Transition } from '@headlessui/react'
-import {
-  MenuIcon,
-  XIcon,
-} from '@heroicons/react/outline'
+import { Fragment, useEffect, useState } from "react";
+import { Link } from "react-scroll";
+import { Popover, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
 
-
-
-
+const navigation = [
+  {
+    name: "Sobre mí",
+    target: "descrip",
+  },
+  {
+    name: "Servicios",
+    target: "services",
+  },
+  {
+    name: "Áreas",
+    target: "areas",
+  },
+  {
+    name: "Testimonios",
+    target: "testimonios",
+  },
+];
 
 export default function Headers() {
-
   const [scrolled, setScrolled] = useState(false);
 
-
-  // Esta función controla el cambio de color del encabezado al hacer scroll
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-    
-  };
-
   useEffect(() => {
-    // Agregar un event listener para detectar el scroll
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
 
-    // Importante: remover el event listener cuando el componente se desmonte
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  return (
-    <Popover className={`${scrolled ? 'bg-gray-50' : 'bg-transparent'
-      } fixed top-0 left-0 w-full z-50 transition-all ease-in-out duration-300`}
+  const scrollTo = (target, close = null) => {
+    if (close) {
+      close();
+    }
 
+    setTimeout(() => {
+      const element = document.getElementById(target);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 100);
+  };
+
+  return (
+    <Popover
+      as="header"
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${
+        scrolled
+          ? "bg-white/95 shadow-lg backdrop-blur-xl"
+          : "bg-transparent"
+      }`}
     >
       <div
-        className="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true" />
-      <div className="relative z-20">
-        <div className="max-w-full mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-20 md:justify-start md:space-x-10">
-          <div>
-            <Link to="cont" smooth={true} duration={500} className="flex cursor-pointer">
-              <span className="sr-only">Workflow</span>
-              <img
-                className="h-8 w-auto sm:h-10 lg:pl-10 lg:pr-8"
+        className={`transition-all duration-500 ${
+          scrolled ? "py-2" : "py-4"
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+
+          {/* LOGO */}
+          <div className="flex-shrink-0">
+            <Link
+              to="cont"
+              smooth={true}
+              duration={700}
+              offset={-80}
+              className="group flex cursor-pointer items-center"
+            >
+              <motion.img
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.2 }}
                 src="./just.png"
-                alt=""
+                alt="Dra. Gisela Karina Brusaferri"
+                className={`w-auto transition-all duration-500 ${
+                  scrolled ? "h-8 sm:h-9" : "h-9 sm:h-11"
+                }`}
               />
             </Link>
           </div>
-          <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-              <span className="sr-only">Open menu</span>
+
+
+          {/* MENÚ DESKTOP */}
+          <div className="hidden items-center md:flex">
+
+            <nav className="flex items-center gap-1">
+
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.target}
+                  smooth={true}
+                  duration={700}
+                  offset={-80}
+                  className={`group relative cursor-pointer rounded-full px-4 py-2 font-mont text-sm font-medium transition-all duration-300 ${
+                    scrolled
+                      ? "text-gray-600 hover:text-pink-900"
+                      : "text-white/90 hover:text-white"
+                  }`}
+                >
+                  {item.name}
+
+                  {/* Línea animada */}
+                  <span
+                    className={`absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full transition-all duration-300 group-hover:w-5/6 ${
+                      scrolled ? "bg-pink-900" : "bg-pink-200"
+                    }`}
+                  />
+                </Link>
+              ))}
+
+            </nav>
+
+
+            {/* Separador */}
+            <div
+              className={`mx-5 h-7 w-px ${
+                scrolled ? "bg-gray-200" : "bg-white/20"
+              }`}
+            />
+
+
+            {/* NOMBRE */}
+            <div className="hidden lg:block">
+              <p
+                className={`font-mont text-sm font-semibold transition-colors duration-300 ${
+                  scrolled ? "text-gray-800" : "text-white"
+                }`}
+              >
+                Dra. Gisela Karina Brusaferri
+              </p>
+
+              <p
+                className={`mt-0.5 font-mont text-[10px] uppercase tracking-[0.18em] transition-colors duration-300 ${
+                  scrolled ? "text-pink-800" : "text-pink-200"
+                }`}
+              >
+                Abogada
+              </p>
+            </div>
+
+
+            {/* WHATSAPP */}
+            <a
+              href="https://wa.me/5491140884332?text=Hola%20Dra.%20Gisela%2C%20quisiera%20realizar%20una%20consulta."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-6 hidden items-center gap-2 rounded-full bg-pink-900 px-5 py-2.5 font-mont text-sm font-medium text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-pink-800 hover:shadow-lg xl:flex"
+            >
+              <FaWhatsapp className="h-4 w-4" />
+              <span>Consultar</span>
+            </a>
+
+          </div>
+
+
+          {/* BOTÓN MOBILE */}
+          <div className="md:hidden">
+            <Popover.Button
+              className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 ${
+                scrolled
+                  ? "border-gray-200 bg-white text-gray-700 shadow-sm"
+                  : "border-white/20 bg-white/10 text-white backdrop-blur-md"
+              }`}
+            >
+              <span className="sr-only">Abrir menú</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
           </div>
-          <div className="hidden md:flex-1 md:flex md:items-center md:justify-between">
-            <Popover.Group as="nav" className="flex space-x-10">
-              {/* <Popover>
-                {({ open }) => (
-                  <>
-                    <Popover.Button
-                      className={classNames(
-                        open ? 'text-gray-900' : 'text-gray-500',
-                        'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-                      )}
-                    >
-                      <span>Solutions</span>
-                      <ChevronDownIcon
-                        className={classNames(
-                          open ? 'text-gray-600' : 'text-gray-400',
-                          'ml-2 h-5 w-5 group-hover:text-gray-500'
-                        )}
-                        aria-hidden="true"
-                      />
-                    </Popover.Button>
 
-                    <Transition
-                      as={Fragment}
-                      enter="transition ease-out duration-200"
-                      enterFrom="opacity-0 -translate-y-1"
-                      enterTo="opacity-100 translate-y-0"
-                      leave="transition ease-in duration-150"
-                      leaveFrom="opacity-100 translate-y-0"
-                      leaveTo="opacity-0 -translate-y-1"
-                    >
-                      <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg bg-white">
-                        <div className="max-w-7xl mx-auto grid gap-y-6 px-4 py-6 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-8 lg:grid-cols-4 lg:px-8 lg:py-12 xl:py-16">
-                          {solutions.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
-                              className="-m-3 p-3 flex flex-col justify-between rounded-lg hover:bg-gray-50"
-                            >
-                              <div className="flex md:h-full lg:flex-col">
-                                <div className="flex-shrink-0">
-                                  <span className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
-                                    <item.icon className="h-6 w-6" aria-hidden="true" />
-                                  </span>
-                                </div>
-                                <div className="ml-4 md:flex-1 md:flex md:flex-col md:justify-between lg:ml-0 lg:mt-4">
-                                  <div>
-                                    <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                    <p className="mt-1 text-sm text-gray-500">{item.description}</p>
-                                  </div>
-                                  <p className="mt-2 text-sm font-medium text-indigo-600 lg:mt-4">
-                                    Learn more <span aria-hidden="true">&rarr;</span>
-                                  </p>
-                                </div>
-                              </div>
-                            </a>
-                          ))}
-                        </div>
-                        <div className="bg-gray-50">
-                          <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                            {callsToAction.map((item) => (
-                              <div key={item.name} className="flow-root">
-                                <a
-                                  href={item.href}
-                                  className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
-                                >
-                                  <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                  <span className="ml-3">{item.name}</span>
-                                </a>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </Popover.Panel>
-                    </Transition>
-                  </>
-                )}
-              </Popover> */}
-              <Link to="descrip" smooth={true} duration={500} className="text-base font-medium cursor-pointer text-gray-500 hover:text-gray-900">
-                Sobre mí
-              </Link>
-              <Link to="services" smooth={true} duration={500} className="text-base font-medium cursor-pointer text-gray-500 hover:text-gray-900">
-                Servicios
-              </Link>
-              <Link to="areas" smooth={true} duration={500} className="text-base font-medium cursor-pointer text-gray-500 hover:text-gray-900">
-                Áreas
-              </Link>
-              <Link to="test" smooth={true} duration={500} className="text-base font-medium cursor-pointer text-gray-500 hover:text-gray-900">
-                Testimonios
-              </Link>
-              {/* <Popover>
-                {({ open }) => (
-                  <>
-                    <Popover.Button
-                      className={classNames(
-                        open ? 'text-gray-900' : 'text-gray-500',
-                        'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
-                      )}
-                    >
-                      <span>More</span>
-                      <ChevronDownIcon
-                        className={classNames(
-                          open ? 'text-gray-600' : 'text-gray-400',
-                          'ml-2 h-5 w-5 group-hover:text-gray-500'
-                        )}
-                        aria-hidden="true"
-                      />
-                    </Popover.Button>
-
-                    <Transition
-                      as={Fragment}
-                      enter="transition ease-out duration-200"
-                      enterFrom="opacity-0 -translate-y-1"
-                      enterTo="opacity-100 translate-y-0"
-                      leave="transition ease-in duration-150"
-                      leaveFrom="opacity-100 translate-y-0"
-                      leaveTo="opacity-0 -translate-y-1"
-                    >
-                      <Popover.Panel className="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg">
-                        <div className="absolute inset-0 flex">
-                          <div className="bg-white w-1/2" />
-                          <div className="bg-gray-50 w-1/2" />
-                        </div>
-                        <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
-                          <nav className="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
-                            <div>
-                              <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Company</h3>
-                              <ul role="list" className="mt-5 space-y-6">
-                                {company.map((item) => (
-                                  <li key={item.name} className="flow-root">
-                                    <a
-                                      href={item.href}
-                                      className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
-                                    >
-                                      <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                      <span className="ml-4">{item.name}</span>
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div>
-                              <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Resources</h3>
-                              <ul role="list" className="mt-5 space-y-6">
-                                {resources.map((item) => (
-                                  <li key={item.name} className="flow-root">
-                                    <a
-                                      href={item.href}
-                                      className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50"
-                                    >
-                                      <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                      <span className="ml-4">{item.name}</span>
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </nav>
-                          <div className="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
-                            <div>
-                              <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">
-                                From the blog
-                              </h3>
-                              <ul role="list" className="mt-6 space-y-6">
-                                {blogPosts.map((post) => (
-                                  <li key={post.id} className="flow-root">
-                                    <a href={post.href} className="-m-3 p-3 flex rounded-lg hover:bg-gray-100">
-                                      <div className="hidden sm:block flex-shrink-0">
-                                        <img className="w-32 h-20 object-cover rounded-md" src={post.imageUrl} alt="" />
-                                      </div>
-                                      <div className="w-0 flex-1 sm:ml-8">
-                                        <h4 className="text-base font-medium text-gray-900 truncate">{post.name}</h4>
-                                        <p className="mt-1 text-sm text-gray-500">{post.preview}</p>
-                                      </div>
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div className="mt-6 text-sm font-medium">
-                              <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                                {' '}
-                                View all posts <span aria-hidden="true">&rarr;</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </Popover.Panel>
-                    </Transition>
-                  </>
-                )}
-              </Popover> */}
-            </Popover.Group>
-            <div className="flex items-center pr-12 md:ml-12">
-              <h2 className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Dra. Gisela Karina Brusaferri
-              </h2>
-
-            </div>
-          </div>
         </div>
       </div>
 
+
+      {/* MENÚ MOBILE */}
       <Transition
         as={Fragment}
-        enter="duration-200 ease-out"
-        enterFrom="opacity-0 scale-95"
-        enterTo="opacity-100 scale-100"
-        leave="duration-100 ease-in"
-        leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-95"
+        enter="duration-300 ease-out"
+        enterFrom="opacity-0 -translate-y-4"
+        enterTo="opacity-100 translate-y-0"
+        leave="duration-200 ease-in"
+        leaveFrom="opacity-100 translate-y-0"
+        leaveTo="opacity-0 -translate-y-4"
       >
         <Popover.Panel
           focus
-          className="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+          className="absolute left-0 right-0 top-0 z-50 bg-white shadow-2xl"
         >
           {({ close }) => (
-            <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-              <div className="pt-5 pb-6 px-5 sm:pb-8">
-                <div className="flex items-center justify-between">
-                  <Link to='cont'
-                    onClick={async (e) => {
-                      e.preventDefault(); // Prevenir la navegación predeterminada                      
-                      close();
-                    }}
-                    smooth={true} duration={500}>
-                    <img
-                      className="h-8 w-auto"
-                      src="just.png"
-                      alt="Workflow"
-                    />
-                  </Link>
-                  <div className="-mr-2">
-                    <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                      <span className="sr-only">Close menu</span>
-                      <XIcon className="h-6 w-6" aria-hidden="true" />
-                    </Popover.Button>
-                  </div>
-                </div>
+            <div>
+
+              {/* Header mobile */}
+              <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
+
+                <img
+                  src="./just.png"
+                  alt="Dra. Gisela Karina Brusaferri"
+                  className="h-9 w-auto"
+                />
+
+                <Popover.Button
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 text-gray-600 transition-colors hover:bg-gray-100"
+                >
+                  <span className="sr-only">Cerrar menú</span>
+                  <XIcon className="h-5 w-5" aria-hidden="true" />
+                </Popover.Button>
+
               </div>
-              <div className="py-6 px-5">
-                <div className="grid grid-cols-1 gap-4">
-                  <Link
-                    to="descrip"
-                    onClick={async (e) => {
-                      e.preventDefault(); // Prevenir la navegación predeterminada                      
-                      close();
-                    }}
-                    smooth={true} duration={500}
-                    className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700"
-                  >
-                    Sobre mí
-                  </Link>
-                  <Link to="services"
-                    onClick={async (e) => {
-                      e.preventDefault(); // Prevenir la navegación predeterminada                      
-                      close();
-                    }}
-                    smooth={true} duration={500}
-                    className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                    Servicios
-                  </Link>
-                  <Link to="areas"
-                    onClick={async (e) => {
-                      e.preventDefault(); // Prevenir la navegación predeterminada                      
-                      close();
-                    }}
-                    smooth={true} duration={500}
-                    className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                    Áreas
-                  </Link>
-                  <Link to="test"
-                    onClick={async (e) => {
-                      e.preventDefault(); // Prevenir la navegación predeterminada                      
-                      close();
-                    }}
-                    smooth={true} duration={500}
-                    className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-                    Testimonios
-                  </Link>
+
+
+              {/* Links */}
+              <nav className="px-5 py-6">
+
+                <div className="space-y-1">
+
+                  {navigation.map((item, index) => (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, x: -15 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        delay: index * 0.05,
+                        duration: 0.3,
+                      }}
+                    >
+                      <button
+                        onClick={() => scrollTo(item.target, close)}
+                        className="flex w-full items-center justify-between rounded-xl px-4 py-4 text-left font-mont text-base font-medium text-gray-700 transition-all hover:bg-pink-50 hover:text-pink-900"
+                      >
+                        <span>{item.name}</span>
+
+                        <span className="text-pink-800">
+                          →
+                        </span>
+                      </button>
+                    </motion.div>
+                  ))}
+
                 </div>
-                <div className="mt-6">
+
+
+                {/* Separador */}
+                <div className="my-5 h-px bg-gray-100" />
+
+
+                {/* Nombre */}
+                <div className="px-4">
+                  <p className="font-mont text-sm font-semibold text-gray-800">
+                    Dra. Gisela Karina Brusaferri
+                  </p>
+
+                  <p className="mt-1 font-mont text-xs uppercase tracking-wider text-pink-800">
+                    Abogada
+                  </p>
                 </div>
-              </div>
+
+
+                {/* WhatsApp */}
+                <a
+                  href="https://wa.me/5491140884332?text=Hola%20Dra.%20Gisela%2C%20quisiera%20realizar%20una%20consulta."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => close()}
+                  className="mt-6 flex items-center justify-center gap-3 rounded-xl bg-pink-900 px-5 py-4 font-mont text-sm font-semibold text-white shadow-lg transition-all hover:bg-pink-800"
+                >
+                  <FaWhatsapp className="h-5 w-5" />
+                  Realizar una consulta
+                </a>
+
+              </nav>
+
             </div>
           )}
         </Popover.Panel>
       </Transition>
     </Popover>
-  )
+  );
 }

@@ -3,173 +3,182 @@ import { motion } from 'framer-motion';
 const posts = [
   {
     title: 'Accidentes laborales',
-    href: '#',
-    category: { name: 'Article', href: '#' },
     description:
-      'Determinamos tu incapacidad y te ayudamos a recibir la indemnización que te merecés.',
-    date: 'Mar 16, 2020',
-    datetime: '2020-03-16',
-    imageUrl:
-      './accidenteDeTrabajo.jpeg',
-    readingTime: '6 min',
-    author: {
-      name: 'Roel Aufderehar',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+      'Determinamos tu incapacidad y te acompañamos en el reclamo para que puedas obtener la indemnización que te corresponde.',
+    imageUrl: './accidenteDeTrabajo.jpeg',
   },
   {
     title: 'Sucesiones',
-    href: '#',
-    category: { name: 'Video', href: '#' },
     description:
-      'Realizamos entrevistas personalizadas para explicarte de manera sencilla las etapas del proceso.',
-    date: 'Mar 10, 2020',
-    datetime: '2020-03-10',
-    imageUrl:
-      './suce.jpg',
-    readingTime: '4 min',
-    author: {
-      name: 'Brenna Goyette',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+      'Te acompañamos durante todo el proceso sucesorio, explicándote cada etapa de manera clara y personalizada.',
+    imageUrl: './suce.jpg',
   },
   {
-    title: 'Laboral',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
+    title: 'Derecho laboral',
     description:
-      'Asesoramos al trabajador en los reclamos de sus derechos laborales para obtener lo que por ley le corresponde.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      './agotamiento.jpg',
-    readingTime: '11 min',
-    author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+      'Asesoramos a trabajadores en reclamos por despidos, indemnizaciones y demás derechos laborales.',
+    imageUrl: './agotamiento.jpg',
   },
   {
     title: 'Accidentes de tránsito',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
     description:
-      'Realizamos el reclamo ante la compañía de seguros para conseguirte la mejor indemnización.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      './accidentes.jpg',
-    readingTime: '11 min',
-    author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+      'Gestionamos los reclamos correspondientes ante compañías de seguros y terceros para defender tus derechos.',
+    imageUrl: './accidentes.jpg',
   },
   {
     title: 'Daños y perjuicios',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
     description:
-      'Reclamamos tu compensación ante casos de mala praxis médica.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      './marti.jpg',
-    readingTime: '11 min',
-    author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+      'Analizamos cada situación y reclamamos la compensación que corresponda por los daños sufridos.',
+    imageUrl: './marti.jpg',
   },
   {
     title: 'Jubilaciones',
-    href: '#',
-    category: { name: 'Case Study', href: '#' },
     description:
-      'Realizamos pensiones y jubilaciones en tiempo récord y con el mejor haber.',
-    date: 'Feb 12, 2020',
-    datetime: '2020-02-12',
-    imageUrl:
-      './jub.jpg',
-    readingTime: '11 min',
-    author: {
-      name: 'Daniela Metz',
-      href: '#',
-      imageUrl:
-        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    },
+      'Asesoramiento y gestión de jubilaciones, pensiones y trámites previsionales para acompañarte en cada etapa.',
+    imageUrl: './jub.jpg',
   },
-]
+  {
+    title: 'Mediaciones prejudiciales',
+    description:
+      'Asistencia, acompañamiento y asesoramiento jurídico en mediaciones prejudiciales, buscando acuerdos que protejan tus derechos e intereses.',
+    imageUrl: './mediaciones.webp',
+  },
+];
 
 export default function Areas() {
   return (
-    <div id='areas' className="relative bg-gray-50 px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
-      <div className="absolute inset-0">
-        <div className="h-1/3 bg-white sm:h-2/3" />
+    <section
+      id="areas"
+      className="relative overflow-hidden bg-gray-50 px-4 py-20 sm:px-6 lg:px-8 lg:py-28"
+    >
+
+      {/* Fondo decorativo */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-pink-100/60 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-pink-100/50 blur-3xl" />
       </div>
+
       <div className="relative mx-auto max-w-7xl">
-        <div className="text-center">
-          <motion.h2
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ onde: true, amount: 0 }}
-            transition={{ delay: 0, duration: 1 }}
-            variants={{
-              hidden: { opacity: 0, y: 50 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            className="text-3xl font-bold font-mont tracking-tight text-gray-700 p-4 lg:text-6xl">ÁREAS DE PRÁCTICAS
-          </motion.h2>
-          <motion.p
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ onde: true, amount: 0 }}
-            transition={{ delay: 1, duration: 2 }}
-            variants={{
-              hidden: { opacity: 0, z: 50 },
-              visible: { opacity: 1, z: 0 },
-            }}
-            className="mx-auto mt-3 max-w-2xl font-mont text-xl font-midium text-gray-500 sm:mt-4">
-            Estoy para asesorarte en mis áreas de especialidad.
-          </motion.p>
-        </div>
+
+        {/* Encabezado */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ onde: true, amount: 0 }}
-          transition={{ delay: .5, duration: 1 }}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
-          {posts.map((post) => (
-            <div key={post.title} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
-              <div className="flex-shrink-0">
-                <img className="h-48 w-full object-cover transition-transform duration-500 transform-gpu group-hover:scale-125 hover:scale-110 rotate-0 hover:rotate-2" src={post.imageUrl} alt="" />
-              </div>
-              <div className="flex flex-1 flex-col justify-between bg-white p-6">
-                <div className="flex-1">
-                    <p className="text-xl font-mont font-semibold text-gray-900">{post.title}</p>
-                    <p className="mt-3 text-base font-mont text-gray-500">{post.description}</p>                 
-                </div>
-                <div className="mt-6 flex items-center">
-                </div>
-              </div>
-            </div>
-          ))}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+
+          <span className="inline-block rounded-full border border-pink-200 bg-pink-50 px-5 py-2 font-mont text-sm font-medium uppercase tracking-[0.2em] text-pink-800">
+            Especialidades
+          </span>
+
+          <h2 className="mt-5 font-mont text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl lg:text-6xl">
+            Áreas de <span className="text-pink-800">práctica</span>
+          </h2>
+
+          <div className="mx-auto mt-6 h-[2px] w-16 bg-pink-800" />
+
+          <p className="mx-auto mt-6 max-w-2xl font-mont text-base leading-7 text-gray-500 sm:text-lg">
+            Estoy para asesorarte y acompañarte con atención personalizada
+            en las distintas áreas del derecho.
+          </p>
         </motion.div>
+
+
+        {/* Tarjetas */}
+        <div className="mx-auto mt-16 grid max-w-lg gap-7 sm:grid-cols-2 lg:max-w-none lg:grid-cols-3">
+
+          {posts.map((post, index) => (
+            <motion.article
+              key={post.title}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ y: -8 }}
+              className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-md transition-all duration-500 hover:shadow-2xl"
+            >
+
+              {/* Imagen */}
+              <div className="relative h-56 overflow-hidden">
+
+                <img
+                  src={post.imageUrl}
+                  alt={post.title}
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
+
+                {/* Título sobre imagen */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="font-mont text-2xl font-semibold text-white drop-shadow-lg">
+                    {post.title}
+                  </h3>
+
+                  <div className="mt-2 h-[2px] w-8 bg-pink-300 transition-all duration-500 group-hover:w-14" />
+                </div>
+
+              </div>
+
+
+              {/* Contenido */}
+              <div className="flex flex-1 flex-col bg-white p-6">
+
+                <p className="font-mont text-sm leading-7 text-gray-500 sm:text-base">
+                  {post.description}
+                </p>
+
+                {/* Decoración inferior */}
+                <div className="mt-auto pt-6">
+
+                  <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+
+                    <span className="font-mont text-xs uppercase tracking-wider text-pink-800">
+                      Asesoramiento jurídico
+                    </span>
+
+                    <motion.span
+                      initial={{ x: 0 }}
+                      whileHover={{ x: 5 }}
+                      className="text-lg text-pink-800"
+                    >
+                      →
+                    </motion.span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </motion.article>
+          ))}
+
+        </div>
+
+
+        {/* Texto final */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mx-auto mt-16 max-w-2xl text-center"
+        >
+          <p className="font-mont text-sm leading-7 text-gray-500 sm:text-base">
+            Cada caso es único. Por eso ofrecemos un análisis personalizado
+            y un acompañamiento cercano durante todo el proceso.
+          </p>
+        </motion.div>
+
       </div>
-    </div>
-  )
+    </section>
+  );
 }
