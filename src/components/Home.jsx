@@ -1,19 +1,20 @@
-import React from 'react'
-import Contact from './Contact'
-
-import Descriptions from './Descriptions'
-import Services from './Services'
-import Areas from './Areas'
-import Testimionio from './Testimionio'
-import Example from './Preguntas'
-import Carrusel from './Carrusel'
-import Telef from './Telef'
-import Footer from './Footer'
-import WhatsAppFlotante from './WhatsAppFlotante'
-
 export default function Home() {
   return (
     <div>
+      <div
+        style={{
+          position: 'fixed',
+          top: '20px',
+          left: '20px',
+          zIndex: 999999,
+          background: 'red',
+          color: 'white',
+          padding: '20px',
+        }}
+      >
+        ESTOY EN HOME
+      </div>
+
       <Contact />
       <Descriptions />
       <Services />
@@ -22,6 +23,7 @@ export default function Home() {
       <Example />
       <Telef />
       <Footer />
+
       <WhatsAppFlotante />
     </div>
   )

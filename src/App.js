@@ -7,6 +7,7 @@ import Headers from "./components/Headers";
 import Example from "./components/Preguntas";
 import Services from "./components/Services";
 import Telef from "./components/Telef";
+import WhatsAppFlotante from "./components/WhatsAppFlotante";
 
 
 
@@ -22,7 +23,7 @@ function App() {
       <Example />
       <Telef />
       <Footer />
-     
+     <WhatsAppFlotante />
     </div>
   );
 }
